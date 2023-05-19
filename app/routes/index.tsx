@@ -28,6 +28,11 @@ export default function Index() {
   const [sliderClassname, setSliderClassname] = useState('_3D');
 
   useEffect(() => {
+    const lastSlide = sliderContainerRef.current?.querySelector(
+      '.slide:last-child'
+    ) as HTMLElement;
+    lastSlide.classList.add('last-slide');
+
     function nextSlide() {
       const lastSlide = sliderContainerRef.current?.querySelector(
         '.slide:last-child'
@@ -42,17 +47,17 @@ export default function Index() {
         slicedSlide.forEach((slide) => {
           sliderContainerRef.current?.prepend(slide);
         });
-        const activeSlide =
-          sliderContainerRef.current?.querySelector('.slide.active');
+        const activeSlide = sliderContainerRef.current?.querySelector('.slide.active');
         if (activeSlide) {
           activeSlide.classList.remove('active');
+          lastSlide.classList.remove('last-slide');
         }
         sliderContainerRef.current?.classList.remove('transfomer');
-        lastSlide.classList.remove('last-slide');
+        const newLastSlide = sliderContainerRef.current?.querySelector(
+          '.slide:last-child'
+        ) as HTMLElement;
+        newLastSlide.classList.add('last-slide');
       }, 300);
-      if (lastSlide) {
-        lastSlide.classList.add('last-slide');
-      }
     }
 
     function autoPlay(delay: number, callback: () => void) {
