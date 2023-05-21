@@ -1,34 +1,15 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-.description {
-  text-align: center;
-  color: #ffffff;
-  margin-top: 30px;
-  line-height: 60px;
-}
-
-#slider-wrapp {
+.sliderContainer {
   width: 100vw;
   height: 100vh;
   margin: 150px auto;
   text-align: center;
 }
-#slider-wrapp #slider {
+.sliderContainer .slider {
   width: 100%;
   height: auto;
   position: relative;
 }
-#slider-wrapp #slider .slide {
+.sliderContainer .slider .slide {
   color: #ffffff;
   position: absolute;
   width: 700px;
@@ -39,7 +20,7 @@ body {
   transition: all 0.5s ease;
   transform: perspective(1300px) translate3d(0px, -130px, -500px);
 }
-#slider-wrapp #slider .slide img {
+.sliderContainer .slider .slide img {
   padding: 3px;
   background: #ffffff;
   border-radius: 3px;
@@ -49,47 +30,47 @@ body {
   0% {opacity: 1;}
   100% {opacity: 0;} 
 } 
-#slider-wrapp #slider._3D .slide {
+.sliderContainer .slider._3D .slide {
   box-shadow: -50px 10px 50px -15px rgba(0, 0, 0, 0.3);
   transform: perspective(1300px) rotateY(30deg) translate3d(440px, -230px, -1950px);
   opacity: 1;
 }
-#slider-wrapp #slider._3D .slide:nth-last-child(1) {
+.sliderContainer .slider._3D .slide:nth-last-child(1) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 300px);
   opacity: 1;
 }
-#slider-wrapp #slider._3D .slide:nth-last-child(2) {
+.sliderContainer .slider._3D .slide:nth-last-child(2) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 200px);
   opacity: 1;
 }
-#slider-wrapp #slider._3D .slide:nth-last-child(3) {
+.sliderContainer .slider._3D .slide:nth-last-child(3) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 100px);
   opacity: 0.75;
 }
-#slider-wrapp #slider._3D .slide:nth-last-child(4) {
+.sliderContainer .slider._3D .slide:nth-last-child(4) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 0);
   opacity: 0.5;
 }
-#slider-wrapp #slider._3D .slide.active {
+.sliderContainer .slider._3D .slide.active {
   opacity: 0;
   transform: perspective(1300px) rotateX(0deg) rotateY(35deg) rotateZ(0deg)
     scale3d(1, 1, 1) translate3d(0, 0, 700px) !important;
   animation: fadeOut ease-out 0.4s;
 
 }
-#slider-wrapp #slider._3D.transfomer .slide:nth-last-child(1) {
+.sliderContainer .slider._3D.transfomer .slide:nth-last-child(1) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 300px);
   opacity: 1;
 }
-#slider-wrapp #slider._3D.transfomer .slide:nth-last-child(2) {
+.sliderContainer .slider._3D.transfomer .slide:nth-last-child(2) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 200px);
   opacity: 1;
 }
-#slider-wrapp #slider._3D.transfomer .slide:nth-last-child(3) {
+.sliderContainer .slider._3D.transfomer .slide:nth-last-child(3) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 100px);
   opacity: 0.75;
 }
-#slider-wrapp #slider._3D.transfomer .slide:nth-last-child(4) {
+.sliderContainer .slider._3D.transfomer .slide:nth-last-child(4) {
   transform: perspective(1300px) rotateY(30deg) translate3d(0, 0, 0);
   opacity: 0.5;
 }

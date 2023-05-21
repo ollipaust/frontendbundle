@@ -1,12 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-declare global {
-  interface WindowEventMap {
-    keydown: React.KeyboardEvent<HTMLDivElement>;
-    keyup: React.KeyboardEvent<HTMLDivElement>;
-  }
-}
-
 const imageLinks = [
   'https://preview.ibb.co/iHdNVn/1.jpg',
   'https://preview.ibb.co/mUm9An/2.jpg',
@@ -76,15 +69,22 @@ export default function Index() {
 
   return (
     <main className='relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center'>
-      <div id='slider-wrapp'>
+      <div 
+        id='sliderContainer'
+        className='sliderContainer'
+      >
         <div
           id='slider'
           className={`slider ${sliderClassname}`}
           ref={sliderContainerRef}
         >
           {imageLinks.map((link, index) => (
-            <div key={index} className='slide'>
-              <img src={link} alt={`Slide ${index + 1}`} />
+            <div 
+              key={index} 
+              className='slide'>
+              <img 
+                src={link} 
+                alt={`Slide ${index + 1}`} />
             </div>
           ))}
         </div>

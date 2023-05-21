@@ -13,6 +13,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import customStylesheetUrl from "./styles/custom.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import sliderStylesheetUrl from "./styles/slider.css";
 import { getUser } from "./session.server";
@@ -24,6 +25,7 @@ export const meta: MetaFunction = () => {
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: tailwindStylesheetUrl }, 
+    { rel: "stylesheet", href: customStylesheetUrl },
     { rel: "stylesheet", href: sliderStylesheetUrl }];
 };
 
